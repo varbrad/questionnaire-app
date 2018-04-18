@@ -1,0 +1,14 @@
+{
+  "clips": [
+    {
+      "id": "cool-video",
+      "url": "https://www.youtube.com/embed/uI2YtvI15Ow",
+      "type": "ai"
+    },
+    {
+      "id": "next-vid",
+      "url": "https://www.youtube.com/embed/L2krChQmJow",
+      "type": "human"
+    }
+  ]
+}

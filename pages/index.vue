@@ -1,64 +1,61 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        questionnaire-app
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+  <section class="container" key="1">
+    <h1>Activity Consent</h1>
+    <ol>
+      <li>I have received and read the provided Participant Information Sheet.</li>
+      <li>The activity has been fully explained, and I understand what my participation will involve.</li>
+      <li>I understand that my participation is entirely voluntary, and that I am free to withdraw at any time, without giving reason.</li>
+      <li>I understand how the data I provide will be used and stored in the research process.</li>
+    </ol>
+    <div class="toolbar">
+      <nuxt-link to="/quiz">I agree to participate</nuxt-link>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
-export default {
-  components: {
-    AppLogo
-  }
-}
+export default {};
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container > h1 {
+  font-size: 2rem;
+  color: black;
+  margin: -1rem -1rem 1rem -1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.container > ol > li {
+  padding: 1rem;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.container > .toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.links {
-  padding-top: 15px;
+.container > .toolbar > a {
+  transition: color 300ms ease-out, transform 150ms ease-out;
+  color: orangered;
+  padding: 1rem;
+  border: 1px solid orangered;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: white;
+  transform: scale(1);
+}
+
+.container > .toolbar > a:hover {
+  background-color: orangered;
+  color: white;
+  transform: scale(1.1);
+  text-decoration: underline;
 }
 </style>
