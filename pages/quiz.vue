@@ -2,8 +2,8 @@
   <section class="container" key="2">
     <nuxt-link to="/" class="go-back">Go Back</nuxt-link>
     <h1>Clip #{{clipNumber + 1}}</h1>
-    <iframe width="1400" height="800"
-      :src="currentClip.url" frameborder="0"
+    <iframe width="900" height="500"
+      :src="'https://www.youtube.com/embed/' + currentClip.url" frameborder="0"
       allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
     <div class="grid-toolbar">
@@ -15,29 +15,33 @@
 </template>
 
 <script>
+import _ from "lodash";
+
 import data from "@/assets/data";
 
 export default {
   data() {
+    const clips = _.sampleSize(data.clips, 10);
     return {
       clipNumber: 0,
       choices: [],
-      data
+      // 10 random clips from data
+      clips
     };
   },
   computed: {
     currentClip() {
-      return this.data.clips[this.clipNumber];
+      return this.clips[this.clipNumber];
     }
   },
   methods: {
     choice(option) {
       this.choices[this.clipNumber] = {
-        id: this.data.clips[this.clipNumber].id,
+        id: this.clips[this.clipNumber].id,
         choice: option
       };
       this.clipNumber++;
-      if (this.clipNumber >= this.data.clips.length) {
+      if (this.clipNumber >= this.clips.length) {
         // Did all of them
         localStorage.setItem(
           "quiz:response:" + +new Date(),
