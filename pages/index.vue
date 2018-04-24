@@ -1,6 +1,7 @@
 <template>
   <section class="container" key="1">
     <h1>Activity Consent</h1>
+    <nuxt-link to="/debug">Debug</nuxt-link>
     <ol>
       <li>I have received and read the provided Participant Information Sheet.</li>
       <li>The activity has been fully explained, and I understand what my participation will involve.</li>
