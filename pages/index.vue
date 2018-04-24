@@ -30,6 +30,8 @@ export default {};
 
 .container > ol > li {
   padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .container > .toolbar {
